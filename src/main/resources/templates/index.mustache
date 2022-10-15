@@ -1,0 +1,60 @@
+{{>layout/header}}
+
+<h1>Springboot Web Service Ver.2</h1>
+<div class="col-md-6">
+    <div class="row">
+        <div class="col-md-6">
+            <a href="/posts/save" role="button"
+               class="btn btn-primary">save post!</a>
+            <!-- #userName
+                :mustache는 다른 언어와 같은 if문을 제공하지 않음(ture/false 여부만 확인)
+                :그래서 mustache에서는 항상 최종값을 넘겨줘야 함.
+                :userName이 있다면 노출해라!
+            -->
+            {{#userName}}
+                Logged in as: <span id="user">{{userName}}</span>
+                <!-- /logout
+                    :SpringSecurity에서 기본적으로 제공하는 로그아웃 URL
+                    :개발자가 별도로 저 URL에 해당하는 컨트롤러를 만들 필요 없음!
+                    :SecurityConfig 클래스에서 URL을 변경할 수 있음
+                -->
+                <a href="/logout" class="btn btn-info active" role="button">Logout</a>
+            {{/userName}}
+            <!-- ^userName
+                :해당 값이 존재하지 않는 경우 ^ 사용
+             -->
+            {{^userName}}
+                <!-- /oauth2/authorization/google
+                    :SpringSecurity에서 기본적으로 제공하는 로그인 URL
+                    :개발자가 별도로 저 URL에 해당하는 컨트롤러를 만들 필요 없음!
+                -->
+                <a href="/oauth2/authorization/google" class="btn btn-success active" role="button">Google Login</a>
+                <a href="/oauth2/authorization/naver" class="btn btn-secondary active" role="button">Naver Login</a>
+            {{/userName}}
+        </div>
+    </div>
+    <br>
+    <!-- 목록 출력 영역 -->
+    <table class="table talbe-horizontal table-bordered">
+        <thead class="thead-strong">
+        <tr>
+            <th>POST_NUMBER</th>
+            <th>TITLE</th>
+            <th>AUTHOR</th>
+            <th>UPDATE_DATE</th>
+        </tr>
+        </thead>
+        <tbody id="tbody">
+        {{#posts}} <!--posts라는 List를 순회합니다.-->
+            <tr>
+                <td>{{id}}</td>
+                <td><a href="/posts/update/{{id}}">{{title}}</a></td>
+                <td>{{author}}</td>
+                <td>{{modifiedDate}}</td>
+            </tr>
+        {{/posts}}
+        </tbody>
+    </table>
+</div>
+
+{{>layout/footer}}

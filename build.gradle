@@ -1,0 +1,37 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.3'
+	id 'io.spring.dependency-management' version '1.0.13.RELEASE'
+	id 'java'
+}
+
+group = 'com.ssy'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'junit:junit:4.13.1'
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+	implementation('com.h2database:h2')
+	implementation('org.springframework.boot:spring-boot-starter-mustache')
+	implementation('org.springframework.boot:spring-boot-starter-oauth2-client')
+	implementation('org.springframework.session:spring-session-jdbc')
+	testImplementation ('org.springframework.boot:spring-boot-starter-test')
+	testImplementation ('org.springframework.security:spring-security-test')
+}
+
+//tasks.named('test') {
+//	useJUnitPlatform()
+//}
