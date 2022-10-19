@@ -3,7 +3,6 @@ package com.ssy.book.springboot.web;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ssy.book.springboot.domain.posts.Posts;
 import com.ssy.book.springboot.domain.posts.PostsRepository;
-import com.ssy.book.springboot.service.posts.PostsService;
 import com.ssy.book.springboot.web.dto.PostsSaveRequestDto;
 import com.ssy.book.springboot.web.dto.PostsUpdateRequestDto;
 import org.junit.After;
@@ -13,11 +12,8 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
-import org.springframework.boot.test.web.server.LocalServerPort;
+import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 
 import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
@@ -30,7 +26,6 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import javax.persistence.PostUpdate;
 import java.util.List;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
@@ -92,6 +87,8 @@ public class PostsApiControllerTest {
                                             .build();
 
         String url = "http://localhost:" + port + "/api/v1/posts";
+
+//        HttpEntity<PostsUpdateRequestDto> requestEntity = new HttpEntity<>(requestDto);
 
         //when
 //        ResponseEntity<Long> responseEntity = restTemplate.postForEntity(url, requestDto, Long.class);
