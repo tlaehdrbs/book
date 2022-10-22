@@ -52,7 +52,7 @@ jobs:
         utcOffset: "+09:00"
         
     - name: Show Current Time
-      run: echo "CurrentTime=${{step.current-time.outputs.formattedTime}}"
+      run: echo "CurrentTime=${{steps.current-time.outputs.formattedTime}}"
       shell: bash
 
     # The USERNAME and TOKEN need to correspond to the credentials environment variables used in
