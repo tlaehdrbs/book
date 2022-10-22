@@ -9,9 +9,9 @@ name: freelec_springboot2_webservice
 
 on:
   release:
-    types: push
+    types: [push]
   push:
-    branches: main
+    branches: [main]
 
 jobs:
   build:
