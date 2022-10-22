@@ -1,6 +1,6 @@
 language: java
 jdk:
-  - openjdk8
+  - openjdk11
 # [branches]
 # -> Travis CI를 어느 브랜치가 푸시될 때 수행할 지 지정
 # -> 현재 옵션은 오직 main 브랜치에 push 될 때만 수행
