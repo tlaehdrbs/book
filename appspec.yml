@@ -22,6 +22,6 @@ permissions:
 # -timeout:60으로 스크립트 실행 60초 이상 수행되면 실패 처리
 hooks:
   ApplicationStart:
-    - location: scripts/deploy.sh
+    - location: deploy.sh
       timeout: 60
       runas: ec2-user
