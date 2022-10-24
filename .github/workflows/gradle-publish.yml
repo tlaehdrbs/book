@@ -9,7 +9,7 @@
 env:
   S3_BUCKET_NAME: freelec-build-bucket
   PROJECT_NAME: book
-  CODE_DEPLOY_APP_NAME: CodeDeployGroup
+  CODE_DEPLOY_APP_NAME: freelec-springboot2-webservice
   CODE_DEPLOY_GROUP_NAME: freelec-springboot2-webservice-group
 
 name: freelec_springboot2_webservice
