@@ -1,8 +1,10 @@
+# CodeDeploy 버전
+# 프로젝트 버전이 아니므로 0.0 외에 다른 버전을 사용하면 오류 발생
 version: 0.0
 os: linux
 files:
-# source는 전달해준 파일 중 destination으로 이동시킬 대상입니다. / 인 경우 전체 파일을 지정하게 됩니다.
-# destination는 파일을 받을 위치입니다.
+# source -> 전달해준 파일 중 destination으로 이동시킬 대상입니다. / 인 경우 전체 파일을 지정하게 됩니다.
+# destination -> 파일을 받을 위치입니다.
   - source: /
     destination: /home/ec2-user/app/step2/zip/
     overwrite: yes
