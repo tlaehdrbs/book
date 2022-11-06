@@ -1,6 +1,7 @@
 plugins {
 //	id 'org.springframework.boot' version '2.2.0.RELEASE' -> SecurityConfig::HttpSecurity 관련 Err 발생
-	id 'org.springframework.boot' version '2.7.3'
+//	id 'org.springframework.boot' version '2.7.3' // Spring boot 2.7.x .mustache 파일 한글 깨짐 이슈
+	id 'org.springframework.boot' version '2.6.7'
 	id 'io.spring.dependency-management' version '1.0.13.RELEASE'
 	id 'java'
 }
